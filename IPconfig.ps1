@@ -1,0 +1,1 @@
+﻿cmd /c "ipconfig > %WINDIR%\OUTPUT.txt | type %WINDIR%\OUTPUT.txt"

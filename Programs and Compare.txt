@@ -1,0 +1,3 @@
+Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | Sort-Object -Property DisplayName | Select-Object DisplayName, DisplayVersion, Publisher, InstallDate > E:\InstalledPrograms-PS.txt
+
+Compare-Object -ReferenceObject (Get-Content C:\Users\Lori\Documents\PCapps.txt) -DifferenceObject (Get-Content C:\Users\Lori\Documents\LAPTOPapps.txt)

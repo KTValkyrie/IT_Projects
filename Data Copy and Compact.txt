@@ -1,0 +1,19 @@
+WMIC /node:"VM-WIN7" process call create “cmd.exe /c ipconfig”
+
+cmd /c "\\aoi-dc16-01\Storage\Windows1909\setup.exe /Auto Upgrade /Quiet /NoReboot /DynamicUpdate Disable /Compat ScanOnly && echo %errorlevel%"
+
+start /wait \\aoi-dc16-01\Storage\Windows1909\setup.exe /Auto Upgrade /Quiet /NoReboot /DynamicUpdate Disable /Compat ScanOnly && echo %errorlevel%
+
+C:\$WINDOWS.~BT\Sources\Panther
+
+
+robocopy "%USERPROFILE%\Desktop" "%USERPROFILE%\OneDrive\%COMPUTERNAME%\Desktop" /e /copyall
+robocopy "%USERPROFILE%\Documents" "%USERPROFILE%\OneDrive\%COMPUTERNAME%Documents" /e /copyall
+robocopy "%USERPROFILE%\Downloads" "%USERPROFILE%\OneDrive\%COMPUTERNAME%\Downloads" /e /copyall
+robocopy "%USERPROFILE%\Music" "%USERPROFILE%\OneDrive\%COMPUTERNAME%\Music" /e /copyall
+robocopy "%USERPROFILE%\Pictures" "%USERPROFILE%\OneDrive\%COMPUTERNAME%\Pictures" /e /copyall
+robocopy "%USERPROFILE%\Videos" "%USERPROFILE%\OneDrive\%COMPUTERNAME%\Videos" /e /copyall
+
+robocopy "%USERPROFILE%\Documents" "E:\Backup5-Documents" /e /copyall /XF desktop.ini
+
+cmdkey /add:TERMSRV/WIN7 /user:aoi\ktran /pass:Kt5150171
